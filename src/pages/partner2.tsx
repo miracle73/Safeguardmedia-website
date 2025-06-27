@@ -1,0 +1,463 @@
+import type React from "react";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
+import {
+  Menu,
+  ArrowRight,
+  Cpu,
+  Shield,
+  TrendingUp,
+  Network,
+} from "lucide-react";
+import { useState } from "react";
+import HeaderImg from "../assets/images/header-img.png";
+
+export default function Partner2() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    workEmail: "",
+    companyName: "",
+    website: "",
+    partnershipGoals: "",
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Partnership inquiry submitted:", formData);
+    // Handle form submission here
+  };
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative min-h-screen bg-[#10064C] overflow-hidden">
+        {/* Header background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(${HeaderImg})`,
+          }}
+        />
+
+        {/* Navigation */}
+        <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center">
+              <div className="w-4 h-4 border border-white rounded-full" />
+            </div>
+            <span className="text-white font-semibold text-lg">
+              SafeguardMedia
+            </span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <Button className="bg-[#250DAD] hover:bg-blue-700 text-white">
+              Request a Demo
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button variant="ghost" size="icon" className="lg:hidden text-white">
+            <Menu className="w-6 h-6" />
+          </Button>
+        </nav>
+
+        {/* Hero Content */}
+        <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-100px)] px-6">
+          <div className="text-start max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              Partner with SafeguardMedia
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+              We partner with industry leaders, researchers, and mission-driven
+              organizations to create a safer, more verifiable digital ecosystem
+              for everyone.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Partner with SafeguardMedia Section */}
+      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
+              Why Partner with SafeguardMedia?
+            </h2>
+            <p className="text-[#080808] font-[400] font-[Lora] text-lg max-w-2xl mx-auto">
+              The fight against digital deception is too big for any one
+              organization to tackle alone.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Integrate Cutting-Edge AI */}
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <CardContent className="p-0">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                    <Cpu className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#080808] font-[Lufga]">
+                    Integrate Cutting-Edge AI
+                  </h3>
+                </div>
+                <p className="text-[#080808] font-[400] font-[Lora] text-base leading-relaxed">
+                  Gain a competitive advantage by integrating our best-in-class
+                  deepfake detection and media verification technology directly
+                  into your products and services.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Enhance Brand Trust & Safety */}
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <CardContent className="p-0">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                    <Shield className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#080808] font-[Lufga]">
+                    Enhance Brand Trust & Safety
+                  </h3>
+                </div>
+                <p className="text-[#080808] font-[400] font-[Lora] text-base leading-relaxed">
+                  Demonstrate a powerful commitment to your users' safety and
+                  the integrity of your platform. Position your brand as a
+                  leader in the fight for digital authenticity.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Unlock New Opportunities */}
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <CardContent className="p-0">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                    <TrendingUp className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#080808] font-[Lufga]">
+                    Unlock New Opportunities
+                  </h3>
+                </div>
+                <p className="text-[#080808] font-[400] font-[Lora] text-base leading-relaxed">
+                  Co-develop new solutions, expand your service offerings, and
+                  address critical customer needs around misinformation and
+                  cybersecurity threats.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Join a Network of Experts */}
+            <Card className="p-8 bg-white border-0 shadow-sm">
+              <CardContent className="p-0">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                    <Network className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#080808] font-[Lufga]">
+                    Join a Network of Experts
+                  </h3>
+                </div>
+                <p className="text-[#080808] font-[400] font-[Lora] text-base leading-relaxed">
+                  Collaborate with our team of experts in AI, media forensics,
+                  and cybersecurity to stay ahead of emerging threats and shape
+                  the future of verification technology.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Become a SafeguardMedia Partner Section */}
+      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
+              Become a SafeguardMedia Partner
+            </h2>
+            <p className="text-[#080808] font-[400] font-[Lora] text-lg">
+              A member of our partnerships team will be in touch shortly.
+            </p>
+          </div>
+
+          <Card className="border-0 shadow-sm">
+            <CardContent className="p-8 lg:p-12">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* First Name and Last Name */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="firstName"
+                      className="text-[#080808] font-[Lufga] font-medium"
+                    >
+                      First Name
+                    </Label>
+                    <Input
+                      id="firstName"
+                      type="text"
+                      placeholder="placeholder"
+                      value={formData.firstName}
+                      onChange={(e) =>
+                        handleInputChange("firstName", e.target.value)
+                      }
+                      className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD]"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="lastName"
+                      className="text-[#080808] font-[Lufga] font-medium"
+                    >
+                      Last Name
+                    </Label>
+                    <Input
+                      id="lastName"
+                      type="text"
+                      placeholder="placeholder"
+                      value={formData.lastName}
+                      onChange={(e) =>
+                        handleInputChange("lastName", e.target.value)
+                      }
+                      className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD]"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Work Email Address */}
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="workEmail"
+                    className="text-[#080808] font-[Lufga] font-medium"
+                  >
+                    Work Email Address
+                  </Label>
+                  <Input
+                    id="workEmail"
+                    type="email"
+                    placeholder="user.example@email.com"
+                    value={formData.workEmail}
+                    onChange={(e) =>
+                      handleInputChange("workEmail", e.target.value)
+                    }
+                    className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD]"
+                    required
+                  />
+                </div>
+
+                {/* Company Name */}
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="companyName"
+                    className="text-[#080808] font-[Lufga] font-medium"
+                  >
+                    Company Name
+                  </Label>
+                  <Input
+                    id="companyName"
+                    type="text"
+                    placeholder="placeholder"
+                    value={formData.companyName}
+                    onChange={(e) =>
+                      handleInputChange("companyName", e.target.value)
+                    }
+                    className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD]"
+                    required
+                  />
+                </div>
+
+                {/* Website */}
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="website"
+                    className="text-[#080808] font-[Lufga] font-medium"
+                  >
+                    Website
+                  </Label>
+                  <Input
+                    id="website"
+                    type="url"
+                    placeholder="placeholder"
+                    value={formData.website}
+                    onChange={(e) =>
+                      handleInputChange("website", e.target.value)
+                    }
+                    className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD]"
+                  />
+                </div>
+
+                {/* Tell us about your partnership goals */}
+                <div className="space-y-2">
+                  <Label
+                    htmlFor="partnershipGoals"
+                    className="text-[#080808] font-[Lufga] font-medium"
+                  >
+                    Tell us about your partnership goals?
+                  </Label>
+                  <Textarea
+                    id="partnershipGoals"
+                    placeholder="placeholder"
+                    value={formData.partnershipGoals}
+                    onChange={(e) =>
+                      handleInputChange("partnershipGoals", e.target.value)
+                    }
+                    className="border-gray-300 focus:border-[#250DAD] focus:ring-[#250DAD] min-h-[120px] resize-none"
+                    rows={5}
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="pt-6">
+                  <Button
+                    type="submit"
+                    className="w-full bg-[#250DAD] hover:bg-blue-700 text-white font-[Lufga] font-medium py-3 px-8 text-lg"
+                  >
+                    Submit Partnership Inquiry
+                  </Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#10064C] text-white py-16 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            <div>
+              <div className="flex items-center space-x-2 mb-6">
+                <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 border border-white rounded-full" />
+                </div>
+                <span className="font-semibold text-lg">SafeguardMedia</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-gray-300">Company</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Resources
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-gray-300">Solutions</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    AI Deepfake Detection
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    AI-Assisted Fact-Checking
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Cybersecurity & Fraud Prevention
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-gray-300">
+                Legal & Trust
+              </h4>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Terms Of Service
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Compliance (NDPR, GDPR, CCPA)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-700 pt-8">
+            <p className="text-center text-gray-400 text-sm">
+              © 2025. All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

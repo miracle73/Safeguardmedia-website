@@ -15,7 +15,7 @@ import ProductImg from "../assets/images/Product.png";
 import ReearchImg from "../assets/images/Research.png";
 import PolicyImg from "../assets/images/Policy.png";
 import OperationImg from "../assets/images/Operations.png";
-import Logo from "../assets/images/SafeguardLogo4 (2).png";
+import Logo from "../assets/images/SafeguardLogo3.svg";
 // import Logo2 from "../assets/images/SafeguardLogo4 (1).png";
 
 export default function About() {

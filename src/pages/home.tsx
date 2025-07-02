@@ -52,12 +52,12 @@ export default function Home() {
               <span>Industries</span>
               <ChevronDown className="w-4 h-4" />
             </div> */}
-            <a
+            {/* <a
               href="/partner"
               className="text-white hover:text-gray-200 transition-colors"
             >
               Partner with Us
-            </a>
+            </a> */}
             <a
               href="/about"
               className="text-white hover:text-gray-200 transition-colors"
@@ -138,11 +138,13 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 my-2">
-                      Multimodal Analysis
+                      Multimodal Detection Engine
                     </h3>
                     <p className="text-gray-600">
-                      Detect fake across video, audio, and images with our
-                      unified engine.
+                      Accurately define manipulated content across video, audio
+                      and images using our integrated AI-powered detection
+                      System designed to deliver comprehensive analysis through
+                      a unified cross-modal framework.
                     </p>
                   </div>
                 </div>
@@ -553,7 +555,7 @@ export default function Home() {
                     href="#"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Compliance (NDPR, GDPR, CCPA)
+                    Compliance (GDPR, CCPA, NDPR)
                   </a>
                 </li>
               </ul>

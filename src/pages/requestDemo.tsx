@@ -442,7 +442,7 @@ export default function RequestDemo() {
                     href="#"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Compliance (NDPR, GDPR, CCPA)
+                    Compliance (GDPR, CCPA, NDPR)
                   </a>
                 </li>
               </ul>

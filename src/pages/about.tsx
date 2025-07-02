@@ -55,10 +55,10 @@ export default function About() {
               <ChevronDown className="w-4 h-4" />
             </div> */}
             <a
-              href="/partner"
+              href="/integration"
               className="text-white hover:text-gray-200 transition-colors"
             >
-              Partner with Us
+              Business Integration
             </a>
             <a
               href="/about"
@@ -66,9 +66,9 @@ export default function About() {
             >
               About Us
             </a>
-            <a href="/request-demo">
+            <a href="/get-started">
               <Button className="bg-[#250DAD] hover:bg-blue-700 text-white">
-                Request a Demo
+                Get Started Free
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -91,12 +91,12 @@ export default function About() {
               suite to instantly detect deepfakes, verify multimedia content,
               and protect your assets from digital fraud.
             </p>
-            <a href="/request-demo">
+            <a href="/get-started">
               <Button
                 size="lg"
                 className="bg-[#250DAD] hover:bg-blue-700 text-white px-8 py-3"
               >
-                Request a Demo
+                Get Started Free
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
@@ -361,12 +361,12 @@ export default function About() {
                 {/* <Button variant="outline" size="lg">
                   See Open Roles
                 </Button> */}
-                <a href="/partner">
+                <a href="/integration">
                   <Button
                     size="lg"
                     className="bg-[#250DAD] hover:bg-blue-700 text-white"
                   >
-                    Partner with Us
+                    Protect your business
                   </Button>
                 </a>
               </div>
@@ -403,23 +403,16 @@ export default function About() {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     About Us
                   </a>
                 </li>
+
                 <li>
                   <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
+                    href="/get-started"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Contact Us
@@ -427,7 +420,7 @@ export default function About() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/get-started"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Resources
@@ -440,60 +433,34 @@ export default function About() {
               <h4 className="font-semibold mb-4 text-gray-300">Solutions</h4>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Deepfake Detection
-                  </a>
+                  <div className="text-gray-400">AI Deepfake Detection</div>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI-Assisted Fact-Checking
-                  </a>
+                  <div className="text-gray-400">AI-Assisted Fact-Checking</div>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <div className="text-gray-400">
                     Cybersecurity & Fraud Prevention
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">
+              <div className="font-semibold mb-4 text-gray-300">
                 Legal & Trust
-              </h4>
+              </div>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Privacy Policy
-                  </a>
+                  <div className="text-gray-400">Privacy Policy</div>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Terms Of Service
-                  </a>
+                  <div className="text-gray-400">Terms Of Service</div>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
+                  <div className="text-gray-400">
                     Compliance (GDPR, CCPA, NDPR)
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>

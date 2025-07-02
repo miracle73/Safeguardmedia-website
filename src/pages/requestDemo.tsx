@@ -403,7 +403,7 @@ export default function RequestDemo2() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="john@company.com"
+                        placeholder="your email "
                         value={formData.email}
                         onChange={(e) =>
                           handleInputChange("email", e.target.value)

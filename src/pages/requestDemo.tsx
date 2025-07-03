@@ -21,7 +21,7 @@ import {
   AlertCircle,
   Check,
 } from "lucide-react";
-import Logo from "../assets/images/SafeguardLogo4 (2).png";
+import Logo from "../assets/images/SafeguardLogo3.svg";
 
 export default function RequestDemo2() {
   const [formData, setFormData] = useState({

@@ -13,7 +13,7 @@ import JournalismWorkspaceImg from "../assets/images/Journalism.png";
 import CybersecurityImg from "../assets/images/cybersecurity.png";
 import PublicInfoImg from "../assets/images/publicInfo.png";
 import FooterImg from "../assets/images/footerImage.png";
-import Logo from "../assets/images/SafeguardLogo4 (2).png";
+import Logo from "../assets/images/SafeguardLogo3.svg";
 // import Logo2 from "../assets/images/SafeguardLogo4 (1).png";
 
 export default function Home() {

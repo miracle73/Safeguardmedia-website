@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
-import Logo from "../assets/images/SafeguardLogo4 (2).png";
+import Logo from "../assets/images/SafeguardLogo3.svg";
 
 export default function Partner() {
   const [formData, setFormData] = useState({

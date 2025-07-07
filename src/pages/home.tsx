@@ -464,32 +464,46 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Contacts Column */}
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Company</h4>
+              <h3 className="font-semibold mb-4 text-gray-300">Contacts</h3>
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href="https://www.instagram.com/safe_guard_media/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    About Us
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/get-started"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Contact Us
+                    Instagram
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/get-started"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href="https://x.com/safeguardmedia1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    Resources
+                    X
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/safeguardmedia/about/?viewAsMember=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@safeguardmedia.io"
+                    className="text-gray-400 hover:text-white text-sm"
+                  >
+                    Contact Us: admin@safeguardmedia.org
                   </a>
                 </li>
               </ul>

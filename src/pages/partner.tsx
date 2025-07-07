@@ -220,12 +220,17 @@ export default function Partner() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            <a href="/get-started">
-              <Button className="bg-[#250DAD] hover:bg-blue-700 text-white">
-                Get Started Free
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </a>
+            <Button
+              className="bg-[#250DAD] hover:bg-blue-700 text-white"
+              onClick={() =>
+                document
+                  .getElementById("integration-form")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Talk to Us
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -433,7 +438,10 @@ export default function Partner() {
       </section>
 
       {/* Integration Form Section */}
-      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
+      <section
+        id="integration-form"
+        className="py-16 lg:py-24 px-6 lg:px-12 bg-white"
+      >
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
@@ -642,32 +650,46 @@ export default function Partner() {
               </div>
             </div>
 
+            {/* Contacts Column */}
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Company</h4>
+              <h3 className="font-semibold mb-4 text-gray-300">Contacts</h3>
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href="https://www.instagram.com/safe_guard_media/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    About Us
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/get-started"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Contact Us
+                    Instagram
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/get-started"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href="https://x.com/safeguardmedia1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    Resources
+                    X
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/safeguardmedia/about/?viewAsMember=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white text-sm"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@safeguardmedia.io"
+                    className="text-gray-400 hover:text-white text-sm"
+                  >
+                    Contact Us: admin@safeguardmedia.org
                   </a>
                 </li>
               </ul>

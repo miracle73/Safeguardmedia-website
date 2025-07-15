@@ -134,8 +134,8 @@ export default function RequestDemo2() {
         email: formData.email,
         role: formData.profession,
         goal: formData.primaryUseCase,
-        contentType: formData.contentType, // Default to mixed if not selected
-        urgencyLevel: formData.urgency, // Default to exploring if not selected
+        contentType: formData.contentType,
+        urgencyLevel: formData.urgency,
         metadata: JSON.stringify({
           specificQuestion: formData.specificQuestion,
           agreeToComms: formData.agreeToComms,

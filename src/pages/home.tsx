@@ -1,22 +1,67 @@
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import {
-  //  ChevronDown,
-  Menu,
-  ArrowRight,
-} from "lucide-react";
+import { Menu, ArrowRight, Zap, Rocket, Shield, Star } from "lucide-react";
 import HeaderImg from "../assets/images/header-img.png";
-import MultiModalAnalysisImg from "../assets/images/multimodal-analysis.png";
-import AccuracyImg from "../assets/images/Accuracy.png";
-import WorkflowImg from "../assets/images/Workflow.png";
+// import MultiModalAnalysisImg from "../assets/images/multimodal-analysis.png";
+// import AccuracyImg from "../assets/images/Accuracy.png";
+// import WorkflowImg from "../assets/images/Workflow.png";
 import JournalismWorkspaceImg from "../assets/images/Journalism.png";
 import CybersecurityImg from "../assets/images/cybersecurity.png";
 import PublicInfoImg from "../assets/images/publicInfo.png";
 import FooterImg from "../assets/images/footerImage.png";
 import Logo from "../assets/images/SafeguardLogo3.svg";
-// import Logo2 from "../assets/images/SafeguardLogo4 (1).png";
 
 export default function Home() {
+  const services = [
+    {
+      icon: Rocket,
+      title: "AI & Machine Learning",
+      description:
+        "Custom AI solutions that automate workflows and provide intelligent insights for your business",
+    },
+    {
+      icon: Shield,
+      title: "Software Development & Business Transformation",
+      description:
+        "Custom software applications and digital transformation strategies that modernize your operations",
+    },
+    {
+      icon: Zap,
+      title: "Cloud Infrastructure",
+      description:
+        "Scalable cloud solutions and DevOps services that grow with your business needs",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "James Okafor",
+      role: "Managing Director, TechFlow Solutions",
+      content:
+        "CiphezTech helped us migrate to the cloud seamlessly. Their expertise saved us both time and money while improving our system performance.",
+      rating: 5,
+    },
+    {
+      name: "Adaora Nwosu",
+      role: "Operations Manager, HealthPlus Nigeria",
+      content:
+        "The custom software application they built streamlined our patient management system. It has transformed how we operate and improved our efficiency significantly.",
+      rating: 5,
+    },
+  ];
+
+  const handleServicesNavigation = () => {
+    window.location.href = "/services";
+  };
+
+  const handleContactNavigation = () => {
+    window.location.href = "/contact";
+  };
+
+  // const handleEmailContact = () => {
+  //   window.location.href = "mailto:cipheztechdigitalsolutions@gmail.com";
+  // };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -34,29 +79,21 @@ export default function Home() {
           <div className="flex items-center space-x-2">
             <img
               src={Logo}
-              alt="SafeguardMedia Logo"
+              alt="CiphezTech Logo"
               className="w-10 h-10 rounded-full"
             />
             <span className="text-white font-semibold text-lg">
-              SafeguardMedia
+              CiphezTech Innovations
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {/* <div className="flex items-center space-x-1 text-white cursor-pointer">
-              <span>Solutions</span>
-              <ChevronDown className="w-4 h-4" />
-            </div>
-            <div className="flex items-center space-x-1 text-white cursor-pointer">
-              <span>Industries</span>
-              <ChevronDown className="w-4 h-4" />
-            </div> */}
             <a
-              href="/integration"
+              href="/services"
               className="text-white hover:text-gray-200 transition-colors"
             >
-              Business Integration
+              Our Services
             </a>
             <a
               href="/about"
@@ -64,9 +101,9 @@ export default function Home() {
             >
               About Us
             </a>
-            <a href="/get-started">
+            <a href="/contact">
               <Button className="bg-[#250DAD] hover:bg-blue-700 text-white">
-                Get Started Free
+                Contact Us
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
@@ -82,19 +119,19 @@ export default function Home() {
         <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-100px)] px-6">
           <div className="text-center max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              The Standard for Digital Trust
+              Empowering Your Digital Journey
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Arm your organization with the industry's most comprehensive AI
-              suite to instantly detect deepfakes, verify multimedia content,
-              and protect your assets from digital fraud.
+              At CiphezTech Innovations, we bridge the gap between complex
+              technology and business success. Specializing in AI development,
+              software development, and cloud solutions that drive real growth.
             </p>
-            <a href="/get-started">
+            <a href="/services">
               <Button
                 size="lg"
                 className="bg-[#250DAD] hover:bg-blue-700 text-white px-8 py-3"
               >
-                Get Started Free
+                Explore Our Services
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </a>
@@ -108,19 +145,19 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Our Flagship Solution:
+                Our Flagship Solutions:
                 <br />
-                AI Deepfake Detection.
+                AI & Machine Learning.
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Our model instantly verify your media and protect you from
-                digital deception.
+                Custom AI solutions that automate workflows and provide
+                intelligent insights for your business.
               </p>
               <Button
                 className="bg-[#250DAD] hover:bg-blue-700 text-white"
-                onClick={() => (window.location.href = "/get-started")}
+                onClick={handleServicesNavigation}
               >
-                Try Our DeepFake Detector
+                Explore Solutions
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
@@ -130,28 +167,21 @@ export default function Home() {
                 className="p-6 bg-white shadow-2xl"
                 style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
               >
-                {/* <CardContent className="p-0"> */}
                 <div className="flex flex-col items-start space-x-4">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <img
-                      src={MultiModalAnalysisImg}
-                      alt="Multimodal Analysis"
-                      className="w-6 h-6"
-                    />
+                    <Rocket className="w-6 h-6 text-[#250DAD]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 my-2">
-                      Multimodal Detection Engine
+                      Advanced AI Development
                     </h3>
                     <p className="text-gray-600">
-                      Accurately define manipulated content across video, audio
-                      and images using our integrated AI-powered detection
-                      System designed to deliver comprehensive analysis through
-                      a unified cross-modal framework.
+                      We create intelligent systems that learn and adapt to your
+                      business needs, providing automated solutions that scale
+                      with your operations while delivering measurable results.
                     </p>
                   </div>
                 </div>
-                {/* </CardContent> */}
               </div>
             </div>
           </div>
@@ -163,18 +193,15 @@ export default function Home() {
             >
               <div className="flex flex-col items-start space-x-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <img
-                    src={AccuracyImg}
-                    alt="Multimodal Analysis"
-                    className="w-6 h-6"
-                  />
+                  <Shield className="w-6 h-6 text-[#250DAD]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 my-2">
-                    High Accuracy Results
+                    Enterprise-Grade Solutions
                   </h3>
                   <p className="text-gray-600">
-                    Powered by AI models with a 90+ detection accuracy rate.
+                    Robust software applications built with security and
+                    scalability in mind.
                   </p>
                 </div>
               </div>
@@ -186,19 +213,15 @@ export default function Home() {
             >
               <div className="flex flex-col items-start space-x-4">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <img
-                    src={WorkflowImg}
-                    alt="Multimodal Analysis"
-                    className="w-6 h-6"
-                  />
+                  <Zap className="w-6 h-6 text-[#250DAD]" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 my-2">
-                    Built for Your Workflow
+                    24/7 Support & Maintenance
                   </h3>
                   <p className="text-gray-600">
-                    Integrate seamlessly with our API or use our intuitive web
-                    interface designed for verifiers.
+                    Continuous support and system optimization to ensure peak
+                    performance of your technology solutions.
                   </p>
                 </div>
               </div>
@@ -212,25 +235,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Core Capabilities at a Glance
+              What We Specialize In
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              These tools are designed to move beyond the initial question of
-              authenticity and provide answers to the more profound challenges
-              of accuracy and safety.
+              We focus on delivering practical technology solutions that solve
+              real business challenges and accelerate growth.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className="p-6 bg-gray-50 border-0">
+                <CardContent className="p-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+
             <Card className="p-6 bg-gray-50 border-0">
               <CardContent className="p-0">
                 <h3 className="font-semibold text-gray-900 mb-3">
-                  Deepfake Detection
+                  Digital Transformation
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Detects manipulated faces, lip-syncing, face-swapping,
-                  expressions, and AI-generated voices in images, videos, and
-                  audio files.
+                  Comprehensive strategies to modernize your business processes
+                  and improve operational efficiency.
                 </p>
               </CardContent>
             </Card>
@@ -238,11 +273,11 @@ export default function Home() {
             <Card className="p-6 bg-gray-50 border-0">
               <CardContent className="p-0">
                 <h3 className="font-semibold text-gray-900 mb-3">
-                  Cheapfake & Shallowfake Detection
+                  System Integration
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Identifies low-tech edits such as speed manipulation, frame
-                  splicing, miscontexting, or cropping unrelated to mislead.
+                  Seamless integration of new technologies with your existing
+                  systems for optimal performance.
                 </p>
               </CardContent>
             </Card>
@@ -250,75 +285,11 @@ export default function Home() {
             <Card className="p-6 bg-gray-50 border-0">
               <CardContent className="p-0">
                 <h3 className="font-semibold text-gray-900 mb-3">
-                  Metadata and Geolocation Analysis
+                  Performance Optimization
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Extracts and analyzes metadata (e.g., EXIF data) from media
-                  files to determine the original time, location, and device
-                  used.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 bg-gray-50 border-0">
-              <CardContent className="p-0">
-                <h3 className="font-semibold text-gray-900 mb-3">
-                  Real-Time Fact-Checking
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Integrates with reputable fact-checking sources such as Google
-                  Fact Check Tools, Snopes, and PolitiFact.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 bg-gray-50 border-0">
-              <CardContent className="p-0">
-                <h3 className="font-semibold text-gray-900 mb-3">
-                  Crowdsourced Verification Portal
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Allows verified journalists, fact-checkers, and experts to
-                  annotate AI findings. Add context or citations, and vote on
-                  accuracy.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 bg-gray-50 border-0">
-              <CardContent className="p-0">
-                <h3 className="font-semibold text-gray-900 mb-3">
-                  Risk Scoring System
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Combines multiple analysis results into a single risk score
-                  indicating whether the media is likely authentic or
-                  manipulated.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 bg-gray-50 border-0">
-              <CardContent className="p-0">
-                <h3 className="font-semibold text-gray-900 mb-3">
-                  Visual Authenticity Reports
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  Generates downloadable and shareable reports showing detected
-                  manipulations, metadata and provenance breakdown and more.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 bg-gray-50 border-0">
-              <CardContent className="p-0">
-                <h3 className="font-semibold text-gray-900 mb-3">
-                  Live Detection Tool
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  A browser extension to enables seamless, on-the-fly
-                  verification of viral or suspicious content as users browse
-                  the internet.
+                  Continuous monitoring and optimization to ensure your systems
+                  perform at their best.
                 </p>
               </CardContent>
             </Card>
@@ -326,21 +297,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Securing Channels Section */}
+      {/* Testimonials Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              What Our Clients Say
+            </h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Hear from businesses that have transformed their operations with
+              our technology solutions.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-lg p-8 shadow-lg">
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 text-yellow-400 fill-current"
+                    />
+                  ))}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  "{testimonial.content}"
+                </p>
+                <div>
+                  <h4 className="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </h4>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Industries Section */}
+      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
             <div>
               <h2 className="text-3xl lg:text-4xl text-[#080808] font-[500] font-[Lufga] font-bold text-gray-900 mb-6">
-                Securing the Channels You Trust
+                Industries We Serve
               </h2>
             </div>
             <div>
               <p className="text-[#080808] text-lg font-[400]">
-                Deepfakes are attacks on our most critical channels of
-                communication, commerce, and democracy. See areas SafeguardMedia
-                is deployed to protect these vital pathways from being
-                compromised.
+                Our technology solutions help businesses across various
+                industries overcome challenges and achieve sustainable growth
+                through digital transformation.
               </p>
             </div>
           </div>
@@ -348,19 +357,19 @@ export default function Home() {
           <div className="space-y-12">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-xl font-semibold text-[#080808]  mb-4">
-                  Journalism & News Integrity
+                <h3 className="text-xl font-semibold text-[#080808] mb-4">
+                  Healthcare & Medical Services
                 </h3>
                 <p className="text-[#080808] font-[400]">
-                  SafeguardMedia's API automatically analyzes both video and
-                  audio for signs of manipulation, providing a confidence score
-                  and a detailed report showing deepfakes.
+                  Custom software solutions for patient management, data
+                  analytics, and operational efficiency in healthcare
+                  organizations.
                 </p>
               </div>
               <div className="relative h-48 lg:h-64 rounded-lg overflow-hidden">
                 <img
                   src={JournalismWorkspaceImg}
-                  alt="Journalism workspace with newspapers and devices"
+                  alt="Healthcare technology workspace"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -368,19 +377,18 @@ export default function Home() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div className="lg:order-2">
-                <h3 className="text-xl font-semibold text-[#080808]  mb-4">
-                  Corporate Cybersecurity & Fraud Prevention
+                <h3 className="text-xl font-semibold text-[#080808] mb-4">
+                  Financial Services & Fintech
                 </h3>
                 <p className="text-[#080808] font-[400]">
-                  SafeguardMedia's monitors internal files for synthetic
-                  artifacts of AI-generated voices and AI-powered impersonation
-                  threats.
+                  Secure cloud infrastructure and AI-powered solutions for
+                  financial institutions and fintech startups.
                 </p>
               </div>
               <div className="relative h-48 lg:h-64 rounded-lg overflow-hidden lg:order-1">
                 <img
                   src={CybersecurityImg}
-                  alt="Person working on cybersecurity"
+                  alt="Financial technology solutions"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -388,17 +396,18 @@ export default function Home() {
 
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-xl font-semibold text-[#080808]  mb-4">
-                  Safeguarding Public Information Channels
+                <h3 className="text-xl font-semibold text-[#080808] mb-4">
+                  Manufacturing & Logistics
                 </h3>
                 <p className="text-[#080808] font-[400]">
-                  Detect media-based election interference and disinformation
+                  IoT solutions and process automation for manufacturing and
+                  supply chain optimization.
                 </p>
               </div>
               <div className="relative h-48 lg:h-64 rounded-lg overflow-hidden">
                 <img
                   src={PublicInfoImg}
-                  alt="News anchor in broadcast studio"
+                  alt="Manufacturing and logistics technology"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -407,34 +416,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Future Section */}
+      {/* CTA Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
-                Shaping The Future of Digital Security
+                Ready to Scale Your Business?
               </h2>
             </div>
             <div>
               <p className="text-[#080808] font-[400] font-[Lora] text-lg mb-8">
-                At SafeguardMedia, we believe the best way to predict the future
-                is to build it. Join our passionate team on a mission to ensure
-                that AI is a tool for clarity and creativity, not deception and
-                doubt.
+                Let's discuss how our technology solutions can help you overcome
+                challenges and achieve sustainable growth. Join our passionate
+                team on a mission to transform businesses through innovative
+                technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                {/* <Button variant="outline" size="lg">
-                  See Open Roles
-                </Button> */}
-                <a href="/integration">
-                  <Button
-                    size="lg"
-                    className="bg-[#250DAD] hover:bg-blue-700 text-white"
-                  >
-                    Protect Your Business
-                  </Button>
-                </a>
+                <Button
+                  size="lg"
+                  className="bg-[#250DAD] hover:bg-blue-700 text-white"
+                  onClick={handleContactNavigation}
+                >
+                  Reach out today
+                </Button>
               </div>
             </div>
           </div>
@@ -442,7 +447,7 @@ export default function Home() {
           <div className="relative h-64 lg:h-96 rounded-xl overflow-hidden">
             <img
               src={FooterImg}
-              alt="Diverse team collaborating in modern office"
+              alt="CiphezTech team collaborating on innovative solutions"
               className="w-full h-full object-cover"
             />
           </div>
@@ -457,63 +462,17 @@ export default function Home() {
               <div className="flex items-center space-x-2 mb-6">
                 <img
                   src={Logo}
-                  alt="SafeguardMedia Logo"
+                  alt="CiphezTech Logo"
                   className="w-10 h-10 rounded-full"
                 />
-                <span className="font-semibold text-lg">SafeguardMedia</span>
+                <span className="font-semibold text-lg">
+                  CiphezTech Innovations
+                </span>
               </div>
-              <div className=" px-2 flex justify- gap-4 items-center">
-                <div>
+              <div className=" flex px-2 gap-4 items-center ">
+                <div className="flex justify-start gap-4  items-center">
                   <a
-                    href="https://www.instagram.com/safe_guard_media/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://x.com/safeguardmedia1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://www.linkedin.com/company/safeguardmedia/about/?viewAsMember=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="mailto:admin@safeguardmedia.org"
+                    href="mailto:cipheztechdigitalsolutions@gmail.com"
                     className="text-gray-400 hover:text-white text-sm flex items-center"
                   >
                     <svg
@@ -525,41 +484,42 @@ export default function Home() {
                       <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                   </a>
+                  <span className="font-semibold text-sm">
+                    cipheztechdigitalsolutions@gmail.com
+                  </span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Solutions</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">Services</h4>
               <ul className="space-y-3">
                 <li>
-                  <div className="text-gray-400">AI Deepfake Detection</div>
+                  <div className="text-gray-400">AI & Machine Learning</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">AI-Assisted Fact-Checking</div>
+                  <div className="text-gray-400">Software Development</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">
-                    Cybersecurity & Fraud Prevention
-                  </div>
+                  <div className="text-gray-400">Cloud Infrastructure</div>
                 </li>
               </ul>
             </div>
 
             <div>
               <div className="font-semibold mb-4 text-gray-300">
-                Legal & Trust
+                Support & Contact
               </div>
               <ul className="space-y-3">
                 <li>
-                  <div className="text-gray-400">Privacy Policy</div>
+                  <div className="text-gray-400">24/7 Technical Support</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">Terms Of Service</div>
+                  <div className="text-gray-400">Project Consultation</div>
                 </li>
                 <li>
                   <div className="text-gray-400">
-                    Compliance (GDPR, CCPA, NDPR)
+                    Email: cipheztechdigitalsolutions@gmail.com
                   </div>
                 </li>
               </ul>
@@ -568,7 +528,7 @@ export default function Home() {
 
           <div className="border-t border-gray-700 pt-8">
             <p className="text-center text-gray-400 text-sm">
-              © 2025. All Rights Reserved
+              © 2025 CiphezTech Innovations. All Rights Reserved
             </p>
           </div>
         </div>

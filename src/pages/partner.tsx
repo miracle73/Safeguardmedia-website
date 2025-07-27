@@ -1,11 +1,25 @@
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import { Menu, ArrowRight, AlertCircle, Check } from "lucide-react";
+import {
+  Menu,
+  ArrowRight,
+  AlertCircle,
+  Check,
+  Brain,
+  Cloud,
+  Shield,
+  Smartphone,
+  Code,
+  Zap,
+  CheckCircle,
+  Star,
+  Globe,
+} from "lucide-react";
 import HeaderImg from "../assets/images/header-img.png";
-import BrandImg from "../assets/images/Brand.png";
-import CuttingEdgeImg from "../assets/images/cutting-edge.png";
-import OpportunitiesImg from "../assets/images/Opportunities.png";
-import NetworkImg from "../assets/images/Network.png";
+// import BrandImg from "../assets/images/Brand.png";
+// import CuttingEdgeImg from "../assets/images/cutting-edge.png";
+// import OpportunitiesImg from "../assets/images/Opportunities.png";
+// import NetworkImg from "../assets/images/Network.png";
 import { useState } from "react";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -13,7 +27,144 @@ import { Textarea } from "../components/ui/textarea";
 import Logo from "../assets/images/SafeguardLogo3.svg";
 import { useBusinessIntegrationMutation } from "../services/apiService";
 
-export default function Partner() {
+export default function Services() {
+  const services = [
+    {
+      icon: Brain,
+      title: "AI & Machine Learning",
+      description:
+        "Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent applications that drive business growth.",
+      features: [
+        "Custom AI Models",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Predictive Analytics",
+        "Deep Learning Solutions",
+        "AI Integration",
+      ],
+      gradient: "from-purple-500 to-pink-500",
+      bgGradient: "from-purple-50 to-pink-50",
+    },
+    {
+      icon: Cloud,
+      title: "Cloud Solutions",
+      description:
+        "Scalable, secure, and cost-effective cloud infrastructure solutions that grow with your business and ensure maximum uptime.",
+      features: [
+        "Cloud Migration",
+        "DevOps & CI/CD",
+        "Microservices Architecture",
+        "Auto-scaling Solutions",
+        "Container Orchestration",
+        "Cloud Security",
+      ],
+      gradient: "from-blue-500 to-cyan-500",
+      bgGradient: "from-blue-50 to-cyan-50",
+    },
+    {
+      icon: Globe,
+      title: "Web Development",
+      description:
+        "Modern, responsive, and high-performance web applications built with the latest technologies to enhance your online presence.",
+      features: [
+        "Responsive Web Design",
+        "E-commerce Solutions",
+        "Content Management Systems",
+        "Progressive Web Apps",
+        "SEO Optimization",
+        "Website Maintenance",
+      ],
+      gradient: "from-green-500 to-teal-500",
+      bgGradient: "from-green-50 to-teal-50",
+    },
+    {
+      icon: Code,
+      title: "Custom Software Development",
+      description:
+        "Tailored software solutions built with cutting-edge technologies to address your unique business challenges and requirements.",
+      features: [
+        "Web Applications",
+        "Enterprise Software",
+        "API Development",
+        "System Integration",
+        "Legacy Modernization",
+        "Performance Optimization",
+      ],
+      gradient: "from-indigo-500 to-purple-500",
+      bgGradient: "from-indigo-50 to-purple-50",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description:
+        "Native and cross-platform mobile applications that deliver exceptional user experiences across iOS and Android platforms.",
+      features: [
+        "iOS Development",
+        "Android Development",
+        "Cross-platform Apps",
+        "App Store Optimization",
+        "Mobile UI/UX",
+        "App Maintenance",
+      ],
+      gradient: "from-red-500 to-orange-500",
+      bgGradient: "from-red-50 to-orange-50",
+    },
+  ];
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "Discovery & Planning",
+      description:
+        "We start by understanding your business needs, goals, and challenges through comprehensive consultation.",
+    },
+    {
+      step: "02",
+      title: "Strategy & Design",
+      description:
+        "Our team creates a detailed strategy and design blueprint tailored to your specific requirements.",
+    },
+    {
+      step: "03",
+      title: "Development & Testing",
+      description:
+        "We build your solution using agile methodologies with continuous testing and quality assurance.",
+    },
+    {
+      step: "04",
+      title: "Deployment & Support",
+      description:
+        "We deploy your solution and provide ongoing support to ensure optimal performance and growth.",
+    },
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Star,
+      title: "Proven Expertise",
+      description:
+        "3+ years of experience delivering successful technology solutions across various industries.",
+    },
+    {
+      icon: Zap,
+      title: "Cutting-edge Technology",
+      description:
+        "We use the latest technologies and best practices to ensure your solution is future-ready.",
+    },
+    {
+      icon: Shield,
+      title: "Security First",
+      description:
+        "Every solution is built with security as a priority, protecting your data and users.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Quality Guaranteed",
+      description:
+        "We maintain the highest quality standards with rigorous testing and quality assurance.",
+    },
+  ];
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -38,6 +189,7 @@ export default function Partner() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [businessIntegration] = useBusinessIntegrationMutation();
+
   // Email validation function
   interface EmailValidationResult {
     (email: string): string;
@@ -154,7 +306,7 @@ export default function Partner() {
         businessNeeds: formData.businessNeeds,
       }).unwrap();
 
-      console.log("Integration inquiry submitted successfully:", response);
+      console.log("Service inquiry submitted successfully:", response);
 
       // Reset form after successful submission
       setFormData({
@@ -197,6 +349,12 @@ export default function Partner() {
     }
   };
 
+  const handleContactNavigation = () => {
+    document
+      .getElementById("consultation-form")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const ErrorMessage: React.FC<{ message: string }> = ({ message }) => (
     <div className="flex items-center space-x-2 text-red-600 text-sm mt-1">
       <AlertCircle className="w-4 h-4" />
@@ -209,11 +367,11 @@ export default function Partner() {
       <div className="flex items-center space-x-2 text-green-800">
         <Check className="w-5 h-5" />
         <span className="font-medium">
-          Integration inquiry submitted successfully!
+          Service consultation request submitted successfully!
         </span>
       </div>
       <p className="text-green-700 text-sm mt-2">
-        We'll contact you within 24 hours to discuss your integration needs.
+        We'll contact you within 24 hours to discuss your project requirements.
       </p>
     </div>
   );
@@ -235,11 +393,11 @@ export default function Partner() {
           <div className="flex items-center space-x-2">
             <img
               src={Logo}
-              alt="SafeguardMedia Logo"
+              alt="CiphezTech Logo"
               className="w-10 h-10 rounded-full"
             />
             <span className="text-white font-semibold text-lg">
-              SafeguardMedia
+              CiphezTech Innovations
             </span>
           </div>
 
@@ -249,11 +407,11 @@ export default function Partner() {
               className="bg-[#250DAD] hover:bg-blue-700 text-white"
               onClick={() =>
                 document
-                  .getElementById("integration-form")
+                  .getElementById("consultation-form")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              Talk to Us
+              Schedule Consultation
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
@@ -268,121 +426,198 @@ export default function Partner() {
         <div className="relative z-10 flex items-center justify-start px-6 lg:px-12 min-h-[calc(100vh-100px)]">
           <div className="text-start max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Integrate AI-Powered Media Verification Into Your Business
+              Comprehensive Tech Solutions
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-              Protect your business from deepfakes, misinformation, and digital
-              fraud. Seamlessly integrate our cutting-edge verification
-              technology into your existing workflows and safeguard your
-              operations.
+              We offer a full spectrum of technology services designed to
+              accelerate your digital transformation and drive sustainable
+              business growth through innovative AI, cloud, and software
+              solutions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Services Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
-              Why Integrate SafeguardMedia Into Your Workflow?
+              Our Core Services
             </h2>
             <p className="text-[#080808] font-[400] font-[Lora] text-lg max-w-3xl mx-auto">
-              Don't let digital deception compromise your business. Our
-              API-first approach makes it easy to add enterprise-grade
-              verification to your existing systems.
+              From AI-powered solutions to cloud infrastructure, we provide
+              comprehensive technology services that transform businesses and
+              drive innovation.
             </p>
           </div>
 
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {services.slice(0, 3).map((service, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div
+                  className={`w-16 h-16 bg-[#10064C] ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <service.icon className="h-8 w-8 text-white" />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+
+                <div className="space-y-3 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-center space-x-3"
+                    >
+                      <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-6">
+                  <button
+                    onClick={handleContactNavigation}
+                    className={`group/btn w-full bg-[#10064C] ${service.gradient} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Seamless Integration */}
-            <Card className="p-8 bg-white border-0 shadow-sm">
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center mb-4">
-                  <img
-                    src={CuttingEdgeImg}
-                    alt="Integration Icon"
-                    className=""
-                  />
-                  <h3 className="text-xl font-bold text-[#080808] mt-4 font-[Lufga]">
-                    Seamless API Integration
-                  </h3>
+            {services.slice(3).map((service, index) => (
+              <div
+                key={index + 3}
+                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div
+                  className={`w-16 h-16 bg-[#10064C] ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <service.icon className="h-8 w-8 text-white" />
                 </div>
-                <p className="text-[#080808] font-[400] font-[Lora] text-center text-base leading-relaxed">
-                  Deploy our deepfake detection and media verification APIs in
-                  minutes, not months. Compatible with your existing tech stack
-                  and scalable to handle millions of requests.
-                </p>
-              </CardContent>
-            </Card>
 
-            {/* Risk Mitigation */}
-            <Card className="p-8 bg-white border-0 shadow-sm">
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center mb-4">
-                  <img src={BrandImg} alt="Risk Icon" className="" />
-                  <h3 className="text-xl font-bold text-[#080808] mt-4 font-[Lufga]">
-                    Reduce Business Risk
-                  </h3>
-                </div>
-                <p className="text-[#080808] font-[400] font-[Lora] text-base text-center leading-relaxed">
-                  Protect your business from financial fraud, reputation damage,
-                  and regulatory violations. Automatically flag suspicious
-                  content before it impacts your operations.
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.description}
                 </p>
-              </CardContent>
-            </Card>
 
-            {/* Competitive Advantage */}
-            <Card className="p-8 bg-white border-0 shadow-sm">
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center mb-4">
-                  <img
-                    src={OpportunitiesImg}
-                    alt="Advantage Icon"
-                    className=""
-                  />
-                  <h3 className="text-xl font-bold text-[#080808] mt-4 font-[Lufga]">
-                    Gain Competitive Advantage
-                  </h3>
+                <div className="space-y-3 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-center space-x-3"
+                    >
+                      <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-[#080808] font-[400] font-[Lora] text-base text-center leading-relaxed">
-                  Differentiate your platform with built-in verification
-                  features. Offer your users unprecedented security while
-                  building trust and credibility in your brand.
-                </p>
-              </CardContent>
-            </Card>
 
-            {/* Expert Support */}
-            <Card className="p-8 bg-white border-0 shadow-sm">
-              <CardContent className="p-0">
-                <div className="flex flex-col items-center mb-4">
-                  <img src={NetworkImg} alt="Support Icon" className="" />
-                  <h3 className="text-xl font-bold text-[#080808] mt-4 font-[Lufga]">
-                    Enterprise-Grade Support
-                  </h3>
+                <div className="pt-6">
+                  <button
+                    onClick={handleContactNavigation}
+                    className={`group/btn w-full bg-[#10064C] ${service.gradient} text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </button>
                 </div>
-                <p className="text-[#080808] font-[400] font-[Lora] text-base text-center leading-relaxed">
-                  Get dedicated technical support, custom integration
-                  assistance, and ongoing optimization from our team of AI and
-                  cybersecurity experts.
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Process Section */}
       <section className="py-16 lg:py-24 px-6 lg:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
-              Perfect for Your Industry
+              Our Process
             </h2>
             <p className="text-[#080808] font-[400] font-[Lora] text-lg max-w-3xl mx-auto">
-              Our technology adapts to various business needs across industries
+              We follow a proven methodology to ensure successful project
+              delivery and client satisfaction.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
+              Why Choose CiphezTech?
+            </h2>
+            <p className="text-[#080808] font-[400] font-[Lora] text-lg max-w-3xl mx-auto">
+              We combine technical expertise with business acumen to deliver
+              solutions that drive real results.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <Card key={index} className="p-8 bg-white border-0 shadow-sm">
+                <CardContent className="p-0">
+                  <div className="flex flex-col items-center mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <item.icon className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#080808] mt-4 font-[Lufga]">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-[#080808] font-[400] font-[Lora] text-center text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="py-16 lg:py-24 px-6 lg:px-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
+              Industries We Serve
+            </h2>
+            <p className="text-[#080808] font-[400] font-[Lora] text-lg max-w-3xl mx-auto">
+              Our technology solutions help businesses across various industries
+              overcome challenges and achieve sustainable growth.
             </p>
           </div>
 
@@ -390,11 +625,12 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  Social Media & Content Platforms
+                  Healthcare & Medical Services
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Automatically detect and flag deepfakes, manipulated media,
-                  and misinformation before they spread on your platform.
+                  Custom software solutions for patient management, data
+                  analytics, and operational efficiency in healthcare
+                  organizations.
                 </p>
               </CardContent>
             </Card>
@@ -402,11 +638,11 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  Financial Services
+                  Financial Services & Fintech
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Prevent identity fraud and verify customer authenticity during
-                  onboarding, transactions, and video-based authentication.
+                  Secure cloud infrastructure and AI-powered solutions for
+                  financial institutions and fintech startups.
                 </p>
               </CardContent>
             </Card>
@@ -414,11 +650,11 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  E-commerce & Marketplaces
+                  E-commerce & Retail
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Verify product images, detect fake reviews, and protect your
-                  marketplace from fraudulent sellers and listings.
+                  Modern web applications and mobile solutions that enhance
+                  customer experience and drive online sales.
                 </p>
               </CardContent>
             </Card>
@@ -426,11 +662,11 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  News & Media Organizations
+                  Manufacturing & Logistics
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Verify the authenticity of user-generated content, images, and
-                  videos before publication to maintain editorial integrity.
+                  IoT solutions and process automation for manufacturing and
+                  supply chain optimization.
                 </p>
               </CardContent>
             </Card>
@@ -438,11 +674,11 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  HR & Recruitment
+                  Education & Training
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Ensure candidate authenticity during video interviews and
-                  verify submitted credentials and documentation.
+                  Learning management systems and educational platforms that
+                  enhance teaching and learning experiences.
                 </p>
               </CardContent>
             </Card>
@@ -450,11 +686,11 @@ export default function Partner() {
             <Card className="p-6 bg-white border-0 shadow-sm">
               <CardContent className="p-0">
                 <h3 className="text-lg font-bold text-[#080808] mb-3 font-[Lufga]">
-                  Government & Public Sector
+                  Startups & Enterprises
                 </h3>
                 <p className="text-[#080808] font-[400] font-[Lora] text-sm leading-relaxed">
-                  Combat misinformation campaigns and verify the authenticity of
-                  digital evidence and public communications.
+                  Scalable solutions that grow with your business, from MVP
+                  development to enterprise-grade systems.
                 </p>
               </CardContent>
             </Card>
@@ -462,19 +698,19 @@ export default function Partner() {
         </div>
       </section>
 
-      {/* Integration Form Section */}
+      {/* Consultation Form Section */}
       <section
-        id="integration-form"
+        id="consultation-form"
         className="py-16 lg:py-24 px-6 lg:px-12 bg-white"
       >
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-[#080808] font-[Lufga] mb-6">
-              Start Your Integration Today
+              Ready to Get Started?
             </h2>
             <p className="text-[#080808] font-[400] font-[Lora] text-lg">
-              Tell us about your business needs and we'll show you how
-              SafeguardMedia can protect and enhance your operations.
+              Let's discuss your project requirements and create a custom
+              solution that drives your business forward.
             </p>
           </div>
 
@@ -562,6 +798,7 @@ export default function Partner() {
                 </div>
 
                 {/* Company Name */}
+                {/* Company Name */}
                 <div className="space-y-2">
                   <Label
                     htmlFor="companyName"
@@ -616,11 +853,11 @@ export default function Partner() {
                     htmlFor="businessNeeds"
                     className="text-[#080808] font-[Lufga] font-medium"
                   >
-                    What are your specific business needs?
+                    What are your specific project requirements?
                   </Label>
                   <Textarea
                     id="businessNeeds"
-                    placeholder="Tell us about your current challenges with digital content verification, fraud prevention, or security concerns..."
+                    placeholder="Tell us about your technology challenges, project goals, or specific services you're interested in..."
                     value={formData.businessNeeds}
                     onChange={(e) =>
                       handleInputChange("businessNeeds", e.target.value)
@@ -650,7 +887,7 @@ export default function Partner() {
                         <span>Submitting...</span>
                       </div>
                     ) : (
-                      "Get Integration Details"
+                      "Schedule Consultation"
                     )}
                   </Button>
                 </div>
@@ -668,63 +905,17 @@ export default function Partner() {
               <div className="flex items-center space-x-2 mb-6">
                 <img
                   src={Logo}
-                  alt="SafeguardMedia Logo"
+                  alt="CiphezTech Logo"
                   className="w-10 h-10 rounded-full"
                 />
-                <span className="font-semibold text-lg">SafeguardMedia</span>
+                <span className="font-semibold text-lg">
+                  CiphezTech Innovations
+                </span>
               </div>
-              <div className=" px-2 flex justify- gap-4 items-center">
-                <div>
+              <div className=" flex px-2 gap-4 items-center ">
+                <div className="flex justify-start gap-4  items-center">
                   <a
-                    href="https://www.instagram.com/safe_guard_media/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://x.com/safeguardmedia1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="https://www.linkedin.com/company/safeguardmedia/about/?viewAsMember=true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="mailto:admin@safeguardmedia.org"
+                    href="mailto:cipheztechdigitalsolutions@gmail.com"
                     className="text-gray-400 hover:text-white text-sm flex items-center"
                   >
                     <svg
@@ -736,22 +927,25 @@ export default function Partner() {
                       <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                   </a>
+                  <span className="font-semibold text-sm">
+                    cipheztechdigitalsolutions@gmail.com
+                  </span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-gray-300">Solutions</h4>
+              <h4 className="font-semibold mb-4 text-gray-300">Services</h4>
               <ul className="space-y-3">
                 <li>
-                  <div className="text-gray-400">AI Deepfake Detection</div>
+                  <div className="text-gray-400">AI & Machine Learning</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">AI-Assisted Fact-Checking</div>
+                  <div className="text-gray-400">Cloud Solutions</div>
                 </li>
                 <li>
                   <div className="text-gray-400">
-                    Cybersecurity & Fraud Prevention
+                    Custom Software Development
                   </div>
                 </li>
               </ul>
@@ -759,18 +953,18 @@ export default function Partner() {
 
             <div>
               <div className="font-semibold mb-4 text-gray-300">
-                Legal & Trust
+                Support & Contact
               </div>
               <ul className="space-y-3">
                 <li>
-                  <div className="text-gray-400">Privacy Policy</div>
+                  <div className="text-gray-400">24/7 Technical Support</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">Terms Of Service</div>
+                  <div className="text-gray-400">Project Consultation</div>
                 </li>
                 <li>
                   <div className="text-gray-400">
-                    Compliance (GDPR, CCPA, NDPR)
+                    Email: cipheztechdigitalsolutions@gmail.com
                   </div>
                 </li>
               </ul>
@@ -779,7 +973,7 @@ export default function Partner() {
 
           <div className="border-t border-gray-700 pt-8">
             <p className="text-center text-gray-400 text-sm">
-              © 2025. All Rights Reserved
+              © 2025 CiphezTech Innovations. All Rights Reserved
             </p>
           </div>
         </div>

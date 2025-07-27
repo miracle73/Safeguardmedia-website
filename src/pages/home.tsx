@@ -2,16 +2,15 @@ import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Menu, ArrowRight, Zap, Rocket, Shield, Star } from "lucide-react";
 import HeaderImg from "../assets/images/header-img.png";
-// import MultiModalAnalysisImg from "../assets/images/multimodal-analysis.png";
-// import AccuracyImg from "../assets/images/Accuracy.png";
-// import WorkflowImg from "../assets/images/Workflow.png";
+import { useNavigate } from "react-router-dom";
 import JournalismWorkspaceImg from "../assets/images/Journalism.png";
 import CybersecurityImg from "../assets/images/cybersecurity.png";
 import PublicInfoImg from "../assets/images/publicInfo.png";
 import FooterImg from "../assets/images/footerImage.png";
-import Logo from "../assets/images/SafeguardLogo3.svg";
+import Logo from "../assets/images/Cipheztech.svg";
 
 export default function Home() {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Rocket,
@@ -50,14 +49,6 @@ export default function Home() {
     },
   ];
 
-  const handleServicesNavigation = () => {
-    window.location.href = "/services";
-  };
-
-  const handleContactNavigation = () => {
-    window.location.href = "/contact";
-  };
-
   // const handleEmailContact = () => {
   //   window.location.href = "mailto:cipheztechdigitalsolutions@gmail.com";
   // };
@@ -77,11 +68,7 @@ export default function Home() {
         {/* Navigation */}
         <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-6">
           <div className="flex items-center space-x-2">
-            <img
-              src={Logo}
-              alt="CiphezTech Logo"
-              className="w-10 h-10 rounded-full"
-            />
+            <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24 " />
             <span className="text-white font-semibold text-lg">
               CiphezTech Innovations
             </span>
@@ -90,18 +77,26 @@ export default function Home() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
-              href="/services"
+              onClick={() => {
+                navigate("/services");
+              }}
               className="text-white hover:text-gray-200 transition-colors"
             >
               Our Services
             </a>
             <a
-              href="/about"
+              onClick={() => {
+                navigate("/about");
+              }}
               className="text-white hover:text-gray-200 transition-colors"
             >
               About Us
             </a>
-            <a href="/contact">
+            <a
+              onClick={() => {
+                navigate("/contact");
+              }}
+            >
               <Button className="bg-[#250DAD] hover:bg-blue-700 text-white">
                 Contact Us
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -126,7 +121,11 @@ export default function Home() {
               technology and business success. Specializing in AI development,
               software development, and cloud solutions that drive real growth.
             </p>
-            <a href="/services">
+            <a
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
               <Button
                 size="lg"
                 className="bg-[#250DAD] hover:bg-blue-700 text-white px-8 py-3"
@@ -155,7 +154,9 @@ export default function Home() {
               </p>
               <Button
                 className="bg-[#250DAD] hover:bg-blue-700 text-white"
-                onClick={handleServicesNavigation}
+                onClick={() => {
+                  navigate("/services");
+                }}
               >
                 Explore Solutions
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -436,7 +437,9 @@ export default function Home() {
                 <Button
                   size="lg"
                   className="bg-[#250DAD] hover:bg-blue-700 text-white"
-                  onClick={handleContactNavigation}
+                  onClick={() => {
+                    navigate("/contact");
+                  }}
                 >
                   Reach out today
                 </Button>
@@ -460,17 +463,13 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="">
               <div className="flex items-center space-x-2 mb-6">
-                <img
-                  src={Logo}
-                  alt="CiphezTech Logo"
-                  className="w-10 h-10 rounded-full"
-                />
+                <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24" />
                 <span className="font-semibold text-lg">
                   CiphezTech Innovations
                 </span>
               </div>
-              <div className=" flex px-2 gap-4 items-center ">
-                <div className="flex justify-start gap-4  items-center">
+              <div className=" flex px-2  gap-4 items-center ">
+                <div className="flex justify-start gap-4 pl-6  items-center">
                   <a
                     href="mailto:cipheztechdigitalsolutions@gmail.com"
                     className="text-gray-400 hover:text-white text-sm flex items-center"

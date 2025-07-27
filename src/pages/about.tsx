@@ -20,7 +20,8 @@ import ProductImg from "../assets/images/Product.png";
 import ReearchImg from "../assets/images/Research.png";
 import PolicyImg from "../assets/images/Policy.png";
 import OperationImg from "../assets/images/Operations.png";
-import Logo from "../assets/images/SafeguardLogo3.svg";
+import Logo from "../assets/images/Cipheztech.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
   // const values = [
@@ -49,7 +50,7 @@ export default function About() {
   //       "Our solutions are designed to scale with your business and drive sustainable growth.",
   //   },
   // ];
-
+  const navigate = useNavigate();
   const stats = [
     { number: "30+", label: "Projects Completed", icon: Zap },
     { number: "15+", label: "Satisfied Clients", icon: Users },
@@ -71,11 +72,7 @@ export default function About() {
         {/* Navigation */}
         <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-6">
           <div className="flex items-center space-x-2">
-            <img
-              src={Logo}
-              alt="CiphezTech Logo"
-              className="w-10 h-10 rounded-full"
-            />
+            <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24 " />
             <span className="text-white font-semibold text-lg">
               CiphezTech Innovations
             </span>
@@ -120,7 +117,11 @@ export default function About() {
               partner in digital transformation, helping organizations harness
               the power of innovation for over 3 years.
             </p>
-            <a href="/contact">
+            <a
+              onClick={() => {
+                navigate("/contact");
+              }}
+            >
               <Button
                 size="lg"
                 className="bg-[#250DAD] hover:bg-blue-700 text-white px-8 py-3"
@@ -517,7 +518,11 @@ export default function About() {
                 not complexity and confusion.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/contact">
+                <a
+                  onClick={() => {
+                    navigate("/contact");
+                  }}
+                >
                   <Button
                     size="lg"
                     className="bg-[#250DAD] hover:bg-blue-700 text-white"
@@ -545,17 +550,13 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="">
               <div className="flex items-center space-x-2 mb-6">
-                <img
-                  src={Logo}
-                  alt="CiphezTech Logo"
-                  className="w-10 h-10 rounded-full"
-                />
+                <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24" />
                 <span className="font-semibold text-lg">
                   CiphezTech Innovations
                 </span>
               </div>
-              <div className=" flex px-2 gap-4 items-center ">
-                <div className="flex justify-start gap-4  items-center">
+              <div className=" flex px-2  gap-4 items-center ">
+                <div className="flex justify-start gap-4 pl-6  items-center">
                   <a
                     href="mailto:cipheztechdigitalsolutions@gmail.com"
                     className="text-gray-400 hover:text-white text-sm flex items-center"

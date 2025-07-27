@@ -21,7 +21,7 @@ import {
   Mail,
   Send,
 } from "lucide-react";
-import Logo from "../assets/images/SafeguardLogo3.svg";
+import Logo from "../assets/images/Cipheztech.svg";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -243,11 +243,7 @@ ${formData.name}
       {/* Header */}
       <header className="bg-[#10064C] border-b px-6 lg:px-12 py-6">
         <div className="flex items-center space-x-2">
-          <img
-            src={Logo}
-            alt="CiphezTech Logo"
-            className="w-10 h-10 rounded-full"
-          />
+          <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24 " />
           <span className="text-white font-semibold text-lg">
             CiphezTech Innovations
           </span>
@@ -644,17 +640,13 @@ ${formData.name}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="">
               <div className="flex items-center space-x-2 mb-6">
-                <img
-                  src={Logo}
-                  alt="CiphezTech Logo"
-                  className="w-10 h-10 rounded-full"
-                />
+                <img src={Logo} alt="CiphezTech Logo" className="w-24 h-24" />
                 <span className="font-semibold text-lg">
                   CiphezTech Innovations
                 </span>
               </div>
-              <div className=" flex px-2 gap-4 items-center ">
-                <div className="flex justify-start gap-4  items-center">
+              <div className=" flex px-2  gap-4 items-center ">
+                <div className="flex justify-start gap-4 pl-6  items-center">
                   <a
                     href="mailto:cipheztechdigitalsolutions@gmail.com"
                     className="text-gray-400 hover:text-white text-sm flex items-center"
@@ -682,12 +674,10 @@ ${formData.name}
                   <div className="text-gray-400">AI & Machine Learning</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">Cloud Solutions</div>
+                  <div className="text-gray-400">Software Development</div>
                 </li>
                 <li>
-                  <div className="text-gray-400">
-                    Custom Software Development
-                  </div>
+                  <div className="text-gray-400">Cloud Infrastructure</div>
                 </li>
               </ul>
             </div>
